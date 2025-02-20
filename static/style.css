@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+form div {
+    margin: 10px 0;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #615fff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px 5px;
+}
+
+.button:hover {
+    background-color: #3f28cd;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statistiques</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Moyennes par Matière</h1>
+    <table>
+        <tr>
+            <th>Matière</th>
+            <th>Moyenne</th>
+        </tr>
+        {% for matiere, moyenne in moyennes.items() %}
+        <tr>
+            <td>{{ matiere }}</td>
+            <td>{{ "%.2f"|format(moyenne) if moyenne else "-" }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a style="margin-top: 12px;" href="{{ url_for('index') }}">Retour à la liste</a>
+</body>
+</html>

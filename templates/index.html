@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestion des Étudiants</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Liste des Étudiants</h1>
+    <a href="{{ url_for('ajouter') }}" class="button">Ajouter un étudiant</a>
+    <a href="{{ url_for('stats') }}" class="button">Voir les statistiques</a>
+    
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Matière</th>
+            <th>Note</th>
+            <th>Action</th>
+        </tr>
+        {% for _, etudiant in etudiants.iterrows() %}
+        <tr>
+            <td>{{ etudiant.id }}</td>
+            <td>{{ etudiant.nom }}</td>
+            <td>{{ etudiant.prenom }}</td>
+            <td>{{ etudiant.email }}</td>
+            <td>{{ etudiant.matiere }}</td>
+            <td>{{ etudiant.note }}</td>
+            <td>
+                <a href="{{ url_for('supprimer', id=etudiant.id) }}" 
+                   onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet étudiant ?')">
+                    Supprimer
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
